@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('getCypress', () => {
+  Cypress.log({
+    name: 'waiting for request',
+  });
+  cy.intercept('GET', 'https://www.cypress.io/').as('cypress');
+  cy.wait(100);
+  cy.request('https://www.cypress.io/');
+  cy.wait(100);
+  cy.wait('@cypress');
+});

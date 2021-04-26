@@ -11,7 +11,9 @@
     "cypress:cache:list": "cypress cache list",
     "list-videos": "ls -l cypress/videos",
     "check-videos": "ok-file 'cypress/videos/*.mp4'",
-    "set-status": "set-status"
+    "set-status": "set-status",
+    "test:e2e:open": "npx cypress open",
+    "test:e2e:run": "npx cypress run --headless --browser=chrome"
   },
   "keywords": [],
   "author": "Gleb Bahmutov <gleb@cypress.io>",
